@@ -15,6 +15,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.03em;
+
 }
 h1, h2, h3, h4, h5, h6, p {
   padding: 0;
@@ -113,7 +114,8 @@ img {
 .nav__link-active,
 .address__location:hover,
 .contacts .contacts__item:hover,
-.contacts .contacts__item:focus {
+.contacts .contacts__item:focus,
+.address__location:focus {
   color: var(--activeColor);
 }
 
@@ -137,7 +139,8 @@ img {
 .header__contacts .contacts__item svg {
   fill: var(--secondaryColor);
 }
-.header__contacts .contacts__item:hover svg{
+.header__contacts .contacts__item:hover svg,
+.header__contacts .contacts__item:focus svg {
   fill: var(--activeColor);
 }
 
@@ -149,11 +152,10 @@ img {
 .first-screen {
   background-color: var(--sectionBg);
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/bg.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   text-align: center;
   height: 600px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 .first-screen .container {
   display: flex;
@@ -200,11 +202,13 @@ img {
 .advantages__item {
   width: 270px;
 }
-.advantages__item svg {
-  display: block;
-  height: 120px;
+.advantages__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  /* height: 120px;
   width: 100%;
-  padding: 25px 102px;
+  padding: 25px 102px; */
   margin-bottom: 30px;
 }
 
@@ -262,7 +266,6 @@ img {
 .team__item .box {
   padding: 30px 30px 0px;
   background-color: var(--colorText);
-  margin-bottom: 16px;
 }
 .team__subtitle {
   font-size: 16px;
@@ -274,6 +277,7 @@ img {
   color: var(--secondaryColor);
   font-size: 16px;
   line-height: 1.2;
+  margin-bottom: 16px;
 }
 .social-list {
   display: flex;
@@ -283,18 +287,22 @@ img {
 .social-list__item a {
   width: 44px;
   height: 44px;
-  padding: 12px;
   border-radius: 50%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .social-list__item a:hover,
-.footer .social-list__item a:hover {
+.social-list__item a:focus,
+.footer .social-list__item a:hover,
+.footer .social-list__item a:focus {
   background-color: var(--activeColor);
 }
 .social-list__item svg {
   fill: #afb1b8;
 }
-.social-list .social-list__item:hover svg {
+.social-list .social-list__item:hover svg,
+.social-link:focus svg {
   fill: var(--colorText);
 }
 .clients-list {
@@ -321,13 +329,16 @@ img {
   justify-content: center;
   align-items: center;
 }
-.clients-list__item:hover {
+.clients-list__item:hover,
+.clients-list__link:focus {
+  outline: var(--activeColor);
   border: 1px solid var(--activeColor);
 }
 .clients-list__item svg {
   fill: #afb1b8;
 }
-.clients-list .clients-list__item:hover svg {
+.clients-list .clients-list__item:hover svg,
+.clients-list__link:focus svg {
   fill: var(--activeColor);
 }
 .clients-list__item:not(:last-child) {
@@ -356,6 +367,7 @@ img {
   margin-right: 8px;
 }
 .filter-list__btn {
+  display: inline-block;
   color: var(--primaryColor);
   font-family: inherit;
   font-size: 16px;
@@ -384,6 +396,13 @@ img {
 }
 .item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.item__link {
+  display: inline-block;
+}
+.item .item__link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
 }
 .item__box {
   padding: 20px 24px;
@@ -414,6 +433,7 @@ img {
 }
 .footer .container {
   display: flex;
+  align-items: center;
 }
 .footer .logo {
   color: var(--colorText);
@@ -445,9 +465,6 @@ img {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
   padding: 0;
-}
-.footer__social {
-  padding-top: 12px;
 }
 .footer__social p {
   font-weight: 700;
