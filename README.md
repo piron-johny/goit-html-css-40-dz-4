@@ -1,1 +1,1 @@
-# goit-html-css-40-dz-4
+# GoIT_40_HTML/CSS_HW 4
